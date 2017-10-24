@@ -5,6 +5,7 @@ from django.utils.translation import ugettext_lazy as _
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^accounts/', include('allauth.urls')),
 
-    url(r'', include('photos.urls'), name='photos'),  # keep it last
+    url(r'', include('photos.urls'), name='photos'),
 ]
