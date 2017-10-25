@@ -1,6 +1,14 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.views.generic import ListView
+
+from .models import Album
 
 
-def homepage(request):
-    return HttpResponse('Hello. This is temporary view.')
+class HomepageView(ListView):
+    template_name = 'photos/homepage.html'
+    model = Album
+
+    def get_queryset(self):
+        q = super().get_queryset()
+        return q.filter(is_public=True)

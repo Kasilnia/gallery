@@ -1,8 +1,8 @@
 from django.conf.urls import url
 
-from photos.views import homepage
+from photos.views import HomepageView
 
 
 urlpatterns = [
-    url(r'', homepage, name='homepage'),
+    url(r'', HomepageView.as_view(), name='homepage'),
 ]

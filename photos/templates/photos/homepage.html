@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% load static i18n %}
+{% load photos_tags %}
+
+{% block content %}
+	<h1>Galleries</h1>
+	{% album_list object_list %}
+{% endblock %}

@@ -1,0 +1,9 @@
+{% load i18n %}
+{% load cropping %}
+
+{% for album in album_list %}
+	<div>
+		<h3>{{ album.name }}</h3>
+		<img src="{% cropped_thumbnail album.photos.all.0 'cropping' %}">
+	</div>
+{% endfor %}
